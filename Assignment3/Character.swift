@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct CharacterResponse: Codable {
+    let results: [Character]
+}
+
+struct Character: Identifiable, Codable {
+    var id: Int
+    var name: String
+    var status: String
+    var species: String
+    var image: String
+}

@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct CharacterDetailView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    var character: Character
 
-#Preview {
-    CharacterDetailView()
+    var body: some View {
+        VStack {
+            AsyncImage(url: URL(string: character.image))
+                .aspectRatio(contentMode: .fit)
+            Text(character.name).font(.largeTitle)
+            Text("Status: \(character.status)")
+            Text("Species: \(character.species)")
+            Spacer()
+        }
+    }
 }
